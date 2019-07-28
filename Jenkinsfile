@@ -94,10 +94,12 @@ def defBuildImage() {
 }
 
 def getPomArtifactId() {
+    // function by pipeline-utility-steps (jenkins plugin)
     return readMavenPom().getArtifactId()
 }
 
 def getPomVer() {
+    // function by pipeline-utility-steps (jenkins plugin)
     return readMavenPom().getVersion();
 }
 
