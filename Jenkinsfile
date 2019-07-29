@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage("Build") {
             agent { 
-                label 'docker-env'
+                label 'docker-agent' //maybe use master
             }
             steps {
                 defBuildImage()
@@ -22,9 +22,6 @@ pipeline {
             when {
                 branch 'SIT';
             }
-            agent { 
-                label 'sit'
-            }
             steps {
                defDeploySIT()
             }
@@ -32,9 +29,6 @@ pipeline {
         stage("TRIAL"){
             when {
                branch 'TRIAL'
-            }
-            agent { 
-                label 'sit'
             }
             steps {
                 //由於各區trial不同，故需拋入字串參數以辨識佈署區域
