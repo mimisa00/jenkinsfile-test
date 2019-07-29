@@ -60,14 +60,6 @@ pipeline {
                 defConfirmDeployRL()
             }
         }
-        stage("PRL"){
-            when {
-               branch 'PRL'
-            }
-            steps {
-                defConfirmDeployPRL()
-            }
-        }
     }
 }
 
