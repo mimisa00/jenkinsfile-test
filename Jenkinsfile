@@ -3,8 +3,8 @@ pipeline {
         label 'master'
     }
     tools {
-        maven 'mvn-werp'
-        jdk 'jdk-werp'
+        maven 'mvn-werp' // SET BY Global Tool Configuration
+        jdk 'jdk-werp'   // SET BY Global Tool Configuration
     }
     environment {
         approvalMap = ''
@@ -38,7 +38,7 @@ pipeline {
             }
             steps {
                 //由於各區trial不同，故需拋入字串參數以辨識佈署區域
-                defDeployTRIAL('COMMON-TRIAL')
+                defDeployTRIAL("COMMON-TRIAL")
             }
         }
         stage("QAT"){
