@@ -20,7 +20,7 @@ pipeline {
         }
         stage("SIT"){
             when {
-                branch 'testing';
+                branch 'SIT';
             }
             agent { 
                 label 'sit'
